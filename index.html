@@ -103,10 +103,27 @@
     <p>&copy; 2025 Our School. All rights reserved.</p>
 </footer>
 
+<script>
+    let f11Counter = 0; // Initialize the counter for F11 presses
 
+    window.addEventListener('keydown', (event) => {
+        // Check if the pressed key is F11
+        if (event.code === 'F11') {
+            event.preventDefault(); // Prevent default browser action for F11
+            f11Counter++; // Increment the counter
+
+            // Check if the counter reaches 6
+            if (f11Counter === 6) {
+                // Show the "Essaoud Mohamed" easter egg
+                const easterEgg = document.getElementById('easter-egg');
+                easterEgg.style.display = 'flex'; // Display the div
+            }
+        }
+    });
 </script>
-
 
 </body>
 </html>
+
+
 
