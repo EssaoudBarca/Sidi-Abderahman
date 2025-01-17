@@ -63,19 +63,11 @@
 
         #easter-egg {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
+            text-align: center;
+            font-size: 30px;
             font-weight: bold;
             color: red;
-            z-index: 1000;
+            margin: 20px 0;
         }
     </style>
 </head>
@@ -104,19 +96,12 @@
 </footer>
 
 <script>
-    let f11Counter = 0; // Initialize the counter for F11 presses
-
+    let f12Counter = 0;
     window.addEventListener('keydown', (event) => {
-        // Check if the pressed key is F11
-        if (event.code === 'F11') {
-            event.preventDefault(); // Prevent default browser action for F11
-            f11Counter++; // Increment the counter
-
-            // Check if the counter reaches 6
-            if (f11Counter === 6) {
-                // Show the "Essaoud Mohamed" easter egg
-                const easterEgg = document.getElementById('easter-egg');
-                easterEgg.style.display = 'flex'; // Display the div
+        if (event.code === 'F12') {
+            f12Counter++;
+            if (f12Counter === 12) {
+                document.getElementById('easter-egg').style.display = 'block';
             }
         }
     });
@@ -124,6 +109,7 @@
 
 </body>
 </html>
+
 
 
 
