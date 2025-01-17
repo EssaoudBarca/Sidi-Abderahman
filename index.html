@@ -104,18 +104,27 @@
 </footer>
 
 <script>
-    let f11Counter = 0;
+    let f11Counter = 0; // Initialize the counter for F11 presses
+
     window.addEventListener('keydown', (event) => {
+        // Check if the pressed key is F11
         if (event.code === 'F11') {
-            f11Counter++;
+            event.preventDefault(); // Prevent default browser action for F11
+            f11Counter++; // Increment the counter
+            console.log(`F11 pressed ${f11Counter} times`);
+
+            // Check if the counter reaches 11
             if (f11Counter === 11) {
+                // Show the "Essaoud Mohamed" easter egg
                 const easterEgg = document.getElementById('easter-egg');
-                easterEgg.style.display = 'flex';
-                easterEgg.textContent = 'Essaoud Mohamed';
+                easterEgg.style.display = 'flex'; // Display the div
+                easterEgg.textContent = 'Essaoud Mohamed'; // Add the text
+                f11Counter = 0; // Reset the counter after showing the message
             }
         }
     });
 </script>
+
 
 </body>
 </html>
