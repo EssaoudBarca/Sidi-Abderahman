@@ -63,11 +63,19 @@
 
         #easter-egg {
             display: none;
-            text-align: center;
-            font-size: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
             font-weight: bold;
             color: red;
-            margin: 20px 0;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -96,12 +104,14 @@
 </footer>
 
 <script>
-    let f12Counter = 0;
+    let f11Counter = 0;
     window.addEventListener('keydown', (event) => {
         if (event.code === 'F11') {
             f11Counter++;
             if (f11Counter === 11) {
-                document.getElementById('easter-egg').style.display = 'block';
+                const easterEgg = document.getElementById('easter-egg');
+                easterEgg.style.display = 'flex';
+                easterEgg.textContent = 'Essaoud Mohamed';
             }
         }
     });
@@ -109,3 +119,4 @@
 
 </body>
 </html>
+
