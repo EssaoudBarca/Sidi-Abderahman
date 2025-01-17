@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .news, .schedule {
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        .news {
+            animation: fadeIn 2s;
+        }
+
+        .schedule {
+            animation: slideIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #2c3e50;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        #easter-egg {
+            display: none;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Our School</h1>
+</header>
+
+<section>
+    <h2>Latest News</h2>
+    <div class="news">
+        <p>Stay updated with the latest happenings in our school. More updates will be here soon!</p>
+    </div>
+
+    <h2>School Schedule</h2>
+    <div class="schedule">
+        <p>Our schedule for the upcoming term will be displayed here. Stay tuned!</p>
+    </div>
+
+    <div id="easter-egg">Essaoud Mohamed</div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Our School. All rights reserved.</p>
+</footer>
+
+<script>
+    let f12Counter = 0;
+    window.addEventListener('keydown', (event) => {
+        if (event.code === 'F12') {
+            f12Counter++;
+            if (f12Counter === 12) {
+                document.getElementById('easter-egg').style.display = 'block';
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
